@@ -8,8 +8,8 @@ This repository is a rust program that takes 4 parameters
 * the filtering (Default  `"lanczos"` but something — anything — must be provided)
 
 It can be invoked with a batch file as follows for example.  This will take
-all the `.jpg` files in `./flickrOriginals` and compress those into subfolders
-like `./flickrOriginals/821`, `./flickrOriginals/614`, etc.
+all the `.jpg` files in `./originals` and compress those into subfolders
+like `./originals/821`, `./originals/614`, etc.
 
 ```bash
 #!/bin/bash
@@ -17,8 +17,8 @@ like `./flickrOriginals/821`, `./flickrOriginals/614`, etc.
 
 set -e
 
-SOURCEDIR="./flickrOriginals"
-SIZES=(821 614 545 500 476 407 338 269 250 200 75)
+SOURCEDIR="./originals"
+SIZES=(1000 500 250)
 
 find "$SOURCEDIR" -maxdepth 1 -type f -iname '*.jpg' | while read -r srcfile; do
     filename=$(basename "$srcfile")
